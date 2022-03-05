@@ -1,0 +1,31 @@
+Chapter 3:
+	1-To install tuned
+		sudo apt install tuned
+	2-Enable tuned
+		sudo systemctl enabled --now tuned
+	3-To get current tuned profile
+		sudo tuned-adm active
+	4-To change tuned profile
+		sudo tuned-adm profile throughput-performance
+		sudo tuned-adm active
+	5-To get nice value
+		top
+	6-To start a process with certain nice value
+		nice <nice value> <process>
+		nice -n -5 sleep 1000
+		 ps axo pid,comm,nice |grep sleep
+	7-To change nice value for running process
+		renice -n <new nice value> <ProcessID>
+		renice -n -10 6059
+---------------------------------------------------------------------
+Chapter 4:
+
+	1-Install ACL
+		sudo apt install acl
+	2-To display ACL	
+		getfacl /tmp/filedata1
+	3-To set an ACL
+		setfacl -m u:ali:rw /tmp/filedata1 
+		-m: Modify
+	4-To remove ACL
+		setfacl -b /tmp/datafile1
